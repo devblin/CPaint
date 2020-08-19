@@ -73,11 +73,6 @@ function changeColor(e) {
   penColor = e.target.getAttribute("data-color");
   toW.style.color = penColor;
   e.target.style.fontColor = "green";
-  if (penColor == "black") {
-    toW.style.backgroundColor = "white";
-  } else {
-    toW.style.backgroundColor = "black";
-  }
 }
 function changeTool(e) {
   toolName = e.target.getAttribute("id");
