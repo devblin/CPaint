@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="main-container">
-      <h1 style="margin-top: 0; margin-left: 10px;">CPaint</h1>
+      <h1 style="margin-top: 0; margin-left: 10px;" id="tow">CPaint</h1>
       <div class="main1">
         <canvas id="canvas" class="main-canvas"></canvas>
         <div style="margin-left: 10px; border: 1px solid white;">
@@ -36,6 +36,7 @@
             <div class="colors colors-border gray" data-color="gray"></div>
             <div class="colors colors-border violet" data-color="violet"></div>
             <div class="colors colors-border brown" data-color="brown"></div>
+            <div class="colors colors-border white" data-color="white"></div>
           </div>
           <hr />
           <h3 style="padding: 10px; margin: 0;">Tools</h3>
@@ -48,7 +49,7 @@
             "
           >
             <div id="eraser" title="Eraser" class="tools fas fa-eraser"></div>
-            <div id="pen" title="Pen" class="tools fas fa-pen"></div>
+            <div id="pen" title="Pen" class="tools fas fa-pen toolcolor"></div>
             <div id="fill" title="Fill" class="tools fas fa-fill-drip"></div>
             <div
               id="clear"
