@@ -1,6 +1,6 @@
 var penColor = "black";
-var fillColor = "white";
 var toolName = "pen";
+var toW = document.getElementById("tow");
 var canvas = document.getElementById("canvas");
 canvas.width = 600;
 canvas.height = 400;
@@ -13,15 +13,34 @@ for (var i = 0; i < colors.length; i++) {
 for (var i = 0; i < tools.length; i++) {
   tools[i].addEventListener("click", changeTool);
 }
+
 function changeColor(e) {
   penColor = e.target.getAttribute("data-color");
-  fillColor = e.target.getAttribute("data-color");
+  toW.style.color = penColor;
+  e.target.style.fontColor = "green";
+  if (penColor == "black") {
+    toW.style.backgroundColor = "white";
+  } else {
+    toW.style.backgroundColor = "black";
+  }
 }
 function changeTool(e) {
   toolName = e.target.getAttribute("id");
+  for (var i = 0; i < tools.length; i++) {
+    var typ = tools[i];
+    if (typ.getAttribute("id") == toolName) {
+      e.target.style.color = "greenyellow";
+    } else {
+      typ.style.color = "white";
+    }
+  }
 }
 canvas.addEventListener("dblclick", function () {
-  fill(fillColor);
+  if (toolName == "clear") {
+    clear();
+  } else if (toolName == "fill") {
+    fill(penColor);
+  }
 });
 var pX;
 var pY;
