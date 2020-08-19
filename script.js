@@ -2,6 +2,8 @@ var penColor = "black";
 var fillColor = "white";
 var toolName = "pen";
 var canvas = document.getElementById("canvas");
+canvas.width = 600;
+canvas.height = 400;
 var colors = document.querySelectorAll(".colors");
 var tools = document.querySelectorAll(".tools");
 var ctx = canvas.getContext("2d");
@@ -23,7 +25,7 @@ canvas.addEventListener("dblclick", function () {
 });
 var pX;
 var pY;
-canvas.addEventListener("mousedown", down);
+document.addEventListener("mousedown", down);
 function down(e) {
   if (toolName == "clear") {
     clear();
@@ -38,7 +40,7 @@ function down(e) {
     pX = e.clientX - canvas.offsetLeft;
     pY = e.clientY - canvas.offsetTop;
     if (toolName == "pen") {
-      draw(pX, pY, penColor, 1, 1);
+      draw(pX, pY, penColor, 3, 3);
     } else {
       draw(pX, pY, "white", 5, 5);
     }
@@ -58,3 +60,4 @@ function draw(sX, sY, color, x, y) {
 function clear() {
   ctx.clearRect(0, 0, 600, 500);
 }
+canvas.addEventListener("dblclick", fill);
