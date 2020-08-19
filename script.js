@@ -25,7 +25,7 @@ canvas.addEventListener("dblclick", function () {
 });
 var pX;
 var pY;
-document.addEventListener("mousedown", down);
+canvas.addEventListener("mousedown", down);
 function down(e) {
   if (toolName == "clear") {
     clear();
